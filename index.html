@@ -11,7 +11,11 @@
         window.onload = function() {
             fetch('https://webhook.site/bf840392-f578-4987-a189-a77b15df92ea') // Your Webhook URL
                 .then(response => {
-                    console.log('Request sent:', response);
+                    if (response.ok) {
+                        console.log('Request sent successfully:', response);
+                    } else {
+                        console.error('Request failed:', response);
+                    }
                 })
                 .catch(error => {
                     console.error('Error sending request:', error);
