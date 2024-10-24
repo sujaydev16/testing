@@ -9,17 +9,13 @@
     <script>
         // Send a GET request to the webhook URL on page load
         window.onload = function() {
-            fetch('https://webhook.site/bf840392-f578-4987-a189-a77b15df92ea', { // Replace with your actual Webhook URL
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    url: window.location.href,
-                    userAgent: navigator.userAgent,
-                    timestamp: new Date().toISOString()
+            fetch('https://webhook.site/bf840392-f578-4987-a189-a77b15df92ea') // Your Webhook URL
+                .then(response => {
+                    console.log('Request sent:', response);
                 })
-            });
+                .catch(error => {
+                    console.error('Error sending request:', error);
+                });
         };
     </script>
 </head>
